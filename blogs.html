@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Blogs | ANS Genix</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Vesperr - v2.0.0
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+       <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li class="drop-down"><a href="#">Services</a>
+            <ul>
+              <li><a href="#">Software Consultancy</a></li>
+              <li><a href="#">Software Development</a></li>
+              <li><a href="#">Digital Branding & Marketing </a></li>
+              <li><a href="#">Student Corner</a></li>
+            </ul>
+          <li><a href="Our Work.html">Our Work</a></li>
+          <li><a href="index.html#blogs">Blogs</a></li>
+          <li><a href="index.html#faq">FAQs</a></li>
+          <li><a href="Contact.php">Contact</a></li>
+
+        </ul>
+      
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  <main id="main">
+<div><br><br></div>
+    <!-- ======= More Services Section ======= -->
+    <section id="blogs" class="more-services">
+      <div class="container">
+        <div class="section-title mt-5">
+          <h2>Blogs</h2>
+          <p></p>
+        </div>
+        <div class="row"  id="blogscontent"></div>
+        <nav class="mt-5" id="pagination" aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            <!-- Pagination links will be added dynamically using JavaScript -->
+          </ul>
+        </nav>
+        
+      </div>
+    </section>
+  
+    
+ </main><!-- End #main -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>ANS Genix IT Solutions</strong>. All Rights Reserved
+          </div>
+          
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="index.html" class="scrollto">Home</a>
+            <a href="about.html" class="scrollto">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="Contact.php">Contact</a>
+            <a href="#">Terms & Conditions</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    $(document).ready(function() {
+  const blogsPerPage = 4; // Number of blogs to display per page
+  let currentPage = 1;
+
+  // Fetch blog data from JSON file (you might need to use an HTTP server due to CORS restrictions)
+  $.getJSON("blogs.json", function(data) {
+    const totalBlogs = data.length;
+    const totalPages = Math.ceil(totalBlogs / blogsPerPage);
+
+    // Function to generate blog cards for a specific page
+    function generateBlogCards(page) {
+  $("#blogs .row").empty();
+  const startIndex = (page - 1) * blogsPerPage;
+  const endIndex = startIndex + blogsPerPage;
+  for (let i = startIndex; i < endIndex && i < totalBlogs; i++) {
+    const blog = data[i];
+    
+    const blogCard = `
+      <div class="col-md-6 d-flex align-items-stretch mt-4">
+        <div class="card"  style="background-image: url('${blog.image}')">
+          <div class="card-body">
+            <h5 class="card-title"><a href="#">${blog.title}</a></h5>
+            <p class="card-text">${blog.discription}</p>
+            <div class="read-more"><a href="blog-detail.html?${i + 1}"><i class="icofont-arrow-right"></i> Read More</a></div>
+          </div>
+          
+        </div>
+      </div>`;
+    $("#blogscontent").append(blogCard);
+  }
+}
+
+    // Initialize blog cards on page load
+    generateBlogCards(currentPage);
+
+    // Function to handle pagination click event
+    function handlePaginationClick(page) {
+      currentPage = page;
+      generateBlogCards(currentPage);
+      updatePagination(page);
+    }
+
+    // Function to update pagination links
+
+    // ... (previous code)
+
+// Function to update pagination links
+function updatePagination(activePage) {
+  $("#pagination .page-item").removeClass("active");
+  $("#pagination .page-item:nth-child(" + (activePage + 1) + ")").addClass("active");
+}
+
+// Generate pagination links
+const paginationLinks = [];
+for (let i = 1; i <= totalPages; i++) {
+  paginationLinks.push(`
+    <li class="page-item ${i === currentPage ? 'active' : ''}">
+      <a class="page-link" href="#">${i}</a>
+    </li>`);
+}
+$("#pagination ul").append(paginationLinks);
+
+// ... (rest of the code)
+
+
+ 
+
+    // Pagination click event
+    $("#pagination").on("click", ".page-link", function() {
+      const page = parseInt($(this).text());
+      handlePaginationClick(page);
+    });
+  });
+});
+
+  </script>
+
+  
+
+</body>
+
+</html>
