@@ -4,12 +4,9 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 77764ec4108551a690de784d9f5274757ec91fa0
 !(function($) {
   "use strict";
 
