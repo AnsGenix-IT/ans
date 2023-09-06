@@ -389,11 +389,11 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 30px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #3498db;
+  color: #1d7bb9;
   border: 2px solid #3498db;
 }
 
-#hero .btn-get-started:hover {
+.services .btn-get-started:hover {
   background: #3498db;
   color: #fff;
 }
@@ -772,7 +772,23 @@ section {
 .services .icon-box:hover .icon i {
   color: #3498db;
 }
+.services .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  color: #1d7bb9;
+  border: 2px solid #3498db;
+}
 
+.services .btn-get-started:hover {
+  background: #ffffff;
+  color: #ffffff;
+}
 /*--------------------------------------------------------------
 # More Services
 --------------------------------------------------------------*/
