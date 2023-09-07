@@ -110,6 +110,8 @@ jQuery(document).ready(function($) {
       url: action,
       data: str,
       success: function(msg) {
+
+        alert(msg)
         if (msg == 'OK') {
           this_form.find('.loading').slideUp();
           this_form.find('.sent-message').slideDown();
